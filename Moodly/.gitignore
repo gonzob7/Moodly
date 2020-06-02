@@ -8,7 +8,7 @@
 
 
 #files to be ignored
-Constants.swift
+/Constants.swift
 
 ## Build generated
 build/
