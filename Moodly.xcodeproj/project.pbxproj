@@ -12,6 +12,7 @@
 		E08F09412486E41200631C3F /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08F09402486E41200631C3F /* HomeVC.swift */; };
 		E08F09462486E41600631C3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E08F09452486E41600631C3F /* Assets.xcassets */; };
 		E08F09492486E41600631C3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E08F09472486E41600631C3F /* LaunchScreen.storyboard */; };
+		E08F09552486E81900631C3F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E08F09542486E81900631C3F /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		E08F09452486E41600631C3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E08F09482486E41600631C3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E08F094A2486E41600631C3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E08F09542486E81900631C3F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +56,47 @@
 		E08F093B2486E41200631C3F /* Moodly */ = {
 			isa = PBXGroup;
 			children = (
-				E08F093C2486E41200631C3F /* AppDelegate.swift */,
-				E08F093E2486E41200631C3F /* SceneDelegate.swift */,
-				E08F09402486E41200631C3F /* HomeVC.swift */,
-				E08F09452486E41600631C3F /* Assets.xcassets */,
-				E08F09472486E41600631C3F /* LaunchScreen.storyboard */,
+				E08F09502486E7B100631C3F /* Models */,
+				E08F09512486E7BC00631C3F /* Views */,
+				E08F09522486E7C200631C3F /* Controllers */,
+				E08F09532486E7D500631C3F /* Support */,
 				E08F094A2486E41600631C3F /* Info.plist */,
+				E08F09542486E81900631C3F /* .gitignore */,
 			);
 			path = Moodly;
+			sourceTree = "<group>";
+		};
+		E08F09502486E7B100631C3F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E08F09512486E7BC00631C3F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E08F09522486E7C200631C3F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E08F09402486E41200631C3F /* HomeVC.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E08F09532486E7D500631C3F /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				E08F09452486E41600631C3F /* Assets.xcassets */,
+				E08F09472486E41600631C3F /* LaunchScreen.storyboard */,
+				E08F093C2486E41200631C3F /* AppDelegate.swift */,
+				E08F093E2486E41200631C3F /* SceneDelegate.swift */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E08F09492486E41600631C3F /* LaunchScreen.storyboard in Resources */,
+				E08F09552486E81900631C3F /* .gitignore in Resources */,
 				E08F09462486E41600631C3F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
