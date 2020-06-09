@@ -28,8 +28,8 @@ class MLTextField: UITextField {
         layer.borderWidth = 2
         layer.borderColor = UIColor.systemGray4.cgColor
         
-        textColor = .label
-        tintColor = .label
+        textColor = .systemTeal
+        tintColor = .systemTeal
         textAlignment = .center
         font = UIFont.preferredFont(forTextStyle: .title2)
         adjustsFontSizeToFitWidth = true
@@ -39,6 +39,6 @@ class MLTextField: UITextField {
         autocorrectionType = .no
         returnKeyType = .go
         
-        placeholder = "Enter a city"
+        placeholder = "Enter a city name"
     }
 }
