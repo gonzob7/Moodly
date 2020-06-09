@@ -19,7 +19,7 @@ class NetworkManager{
         let endpoint = baseURL + "\(city)" + "&units=imperial" + "&appid=" + "\(Constants.apiKey)"
         
         guard let url = URL(string: endpoint) else {
-             completed(.failure(.invalidUsername))
+             completed(.failure(.invalidCity))
              return
          }
         

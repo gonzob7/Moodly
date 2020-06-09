@@ -75,9 +75,12 @@ class SearchVC: UIViewController {
             print("No city entered!")
             return }
         
+        let cityNameFormatted = cityTextField.text!.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
         
         
         let newTabBar = createTabBar()
+        
+        
         
         
         
@@ -97,17 +100,23 @@ class SearchVC: UIViewController {
         })
     }
     
+    
+
+    
+    
+    
     func dismissKeyboard(){
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
         view.addGestureRecognizer(tap)
     }
     
+    
     func createHomeNC() -> UINavigationController{
-         let homeVC = HomeVC()
-        let cityNameFormatted = cityTextField.text!.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
-        homeVC.cityName = cityNameFormatted
-         homeVC.title = "Home"
-         homeVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
+        
+        let homeVC = HomeVC()
+        homeVC.cityName = cityTextField.text!
+        homeVC.cityNameFormatted = cityTextField.text!.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
+        homeVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
          
          return UINavigationController(rootViewController: homeVC)
      }
@@ -129,7 +138,7 @@ class SearchVC: UIViewController {
           
          return tabbar
       }
-
+    
 }
 
 extension SearchVC: UITextFieldDelegate{

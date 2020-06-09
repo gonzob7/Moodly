@@ -12,12 +12,23 @@ class HomeVC: UIViewController {
     
 //    var city: City!
     var cityName: String!
+    var cityNameFormatted: String!
+//    var currentCity: City!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.view.backgroundColor = .systemBackground
-        getWeather(for: cityName)
+        configureViewController()
+
+        getWeather(for: cityNameFormatted)
+
+    }
+    
+    func configureViewController(){
+        view.backgroundColor = .systemBackground
+        title = cityName
+        navigationController?.navigationBar.prefersLargeTitles = true
+        
 
     }
     
@@ -29,25 +40,20 @@ class HomeVC: UIViewController {
             switch result{
             case .success(let city):
                 DispatchQueue.main.async {
+//                    self.currentCity = city
                     print(city.weather[0].description)
+                    self.navigationController?.navigationItem.setRightBarButton(UIBarButtonItem(title: "\(city.main.temp)", style: .plain, target: nil, action: nil), animated: false)
+                    
                 }
 
             case .failure(let error):
                 print(error)
             }
         }
+    }
+    
+
         
     }
     
-    
-
-    
-    
-
-    
-    
-
-
-
-}
 
