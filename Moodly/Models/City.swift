@@ -17,31 +17,23 @@ struct City: Codable{
 //    var speed: Double
 //    var description: String
     
-    private enum CodingKeys: String, CodingKey {
-        case shortDesc = "main"
-        case desc = "description"
-        
+    struct Weather: Codable{
+        var main: String
+        var description: String
     }
     
-}
-
-struct Weather: Codable{
-    var shortDesc: String
-    var desc: String
-    
-    private enum CodingKeys: String, CodingKey {
-        case shortDesc = "main"
-        case desc = "description"
-        
+    struct Main: Codable{
+        var temp: Double
+        var feels_like: Double
     }
     
+    struct Wind: Codable{
+        var speed: Double?
+    }
 }
 
-struct Main: Codable{
-    var temp: Double
-    var feels_like: Double
-}
 
-struct Wind: Codable{
-    var speed: Double?
-}
+
+
+
+

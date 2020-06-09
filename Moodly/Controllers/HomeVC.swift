@@ -41,7 +41,7 @@ class HomeVC: UIViewController {
                 //here dataResponse received from a network request
                 let decoder = JSONDecoder()
                 let model = try decoder.decode(City.self, from: dataResponse)
-                print("\(model.name) : \(model.main.temp): \(model.weather.description)") //Response result
+                print("\(model.name) : \(model.main.temp): \(model.weather[0].description)") //Response result
              } catch let parsingError {
                 print("Error", parsingError)
            }
