@@ -71,22 +71,29 @@ class SearchVC: UIViewController {
     }
     
     @objc func pushTabBar(){
+        guard isCityEntered else{
+            print("No city entered!")
+            return }
+        
+        
+        
         let newTabBar = createTabBar()
+        
+        
+        
         guard let window = UIApplication.shared.windows.first else {
             return
         }
         
         UIApplication.shared.windows.first?.rootViewController = newTabBar
+        
+        
+        
         let options: UIView.AnimationOptions = .transitionCrossDissolve
-
-        // The duration of the transition animation, measured in seconds.
         let duration: TimeInterval = 0.3
-
-        // Creates a transition animation.
-        // Though `animations` is optional, the documentation tells us that it must not be nil. ¯\_(ツ)_/¯
         UIView.transition(with: window, duration: duration, options: options, animations: {}, completion:
         { completed in
-            // maybe do something on completion here
+            return
         })
     }
     
@@ -97,6 +104,8 @@ class SearchVC: UIViewController {
     
     func createHomeNC() -> UINavigationController{
          let homeVC = HomeVC()
+        let cityNameFormatted = cityTextField.text!.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
+        homeVC.cityName = cityNameFormatted
          homeVC.title = "Home"
          homeVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
          

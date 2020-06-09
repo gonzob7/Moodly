@@ -11,13 +11,19 @@ import UIKit
 class HomeVC: UIViewController {
     
 //    var city: City!
+    var cityName: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = .systemBackground
-        
-        NetworkManager.shared.getCurrentWeather(for: "Seattle") { [weak self] result in
+        getWeather(for: cityName)
+
+    }
+    
+    
+    func getWeather(for city: String){
+        NetworkManager.shared.getCurrentWeather(for: city) { [weak self] result in
             guard let self = self else {return}
 
             switch result{
@@ -30,6 +36,7 @@ class HomeVC: UIViewController {
                 print(error)
             }
         }
+        
     }
     
     
