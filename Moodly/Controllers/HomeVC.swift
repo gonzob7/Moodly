@@ -12,7 +12,8 @@ class HomeVC: UIViewController {
     
 //    var city: City!
     let cityTextField = MLTextField()
-    
+    let callToActionButton = MLButton(bgColor: .systemTeal, title: "Get Weather")
+
     var isCityEntered: Bool{
         return !cityTextField.text!.isEmpty
     }
@@ -40,6 +41,23 @@ class HomeVC: UIViewController {
     }
     
     
+    func configureCallToActionButton(){
+        view.addSubview(callToActionButton)
+        callToActionButton.addTarget(self, action: #selector(pushTabBar), for: .touchUpInside)
+        
+        NSLayoutConstraint.activate([
+            callToActionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -50),
+            callToActionButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            callToActionButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            callToActionButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
+    }
+    
+    @objc func pushTabBar(){
+        print("ah")
+    }
+    
+    
     func configureTextField(){
         view.addSubview(cityTextField)
 //        cityTextField.delegate = self
@@ -50,6 +68,12 @@ class HomeVC: UIViewController {
             cityTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
             cityTextField.heightAnchor.constraint(equalToConstant: 50)
         ])
+    }
+    
+    
+    func dismissKeyboard(){
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        view.addGestureRecognizer(tap)
     }
 
 
