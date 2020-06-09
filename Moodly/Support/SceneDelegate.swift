@@ -23,25 +23,42 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.windowScene = windowScene
         window?.rootViewController = createTabBar()
         window?.makeKeyAndVisible()
+        
+        configureNavBar()
+
     }
     
     func createHomeNC() -> UINavigationController{
         let homeVC = HomeVC()
         homeVC.title = "Home"
-        homeVC.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 0)
+        homeVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house"), selectedImage: UIImage(systemName: "house.fill"))
         
         return UINavigationController(rootViewController: homeVC)
     }
     
+    func createHistoryNC() -> UINavigationController{
+        let historyVC = HistoryVC()
+        historyVC.title = "History"
+        historyVC.tabBarItem = UITabBarItem(title: "History", image: UIImage(systemName: "clock"), selectedImage: UIImage(systemName: "clock.fill"))
+        
+        return UINavigationController(rootViewController: historyVC)
+    }
+    
     
     func createTabBar() -> UITabBarController{
-         let tabbar = UITabBarController()
-         UITabBar.appearance().tintColor = .systemBlue
-         tabbar.viewControllers = [createHomeNC()]
+        
+        let tabbar = UITabBarController()
+        UITabBar.appearance().tintColor = .systemTeal
+        tabbar.viewControllers = [createHomeNC(), createHistoryNC()]
          
-         return tabbar
+        return tabbar
      }
-
+    
+    
+    func configureNavBar(){
+        UINavigationBar.appearance().tintColor = .systemTeal
+    }
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.

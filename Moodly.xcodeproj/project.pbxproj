@@ -17,6 +17,8 @@
 		E08F095B2486EB8300631C3F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08F095A2486EB8300631C3F /* Constants.swift */; };
 		E0EED541248F623B000E6E89 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EED540248F623B000E6E89 /* ErrorMessage.swift */; };
 		E0EED543248F6286000E6E89 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EED542248F6286000E6E89 /* City.swift */; };
+		E0EED545248F8FC6000E6E89 /* MLTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EED544248F8FC6000E6E89 /* MLTextField.swift */; };
+		E0EED547248F91EE000E6E89 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EED546248F91EE000E6E89 /* HistoryVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		E08F095A2486EB8300631C3F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E0EED540248F623B000E6E89 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		E0EED542248F6286000E6E89 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		E0EED544248F8FC6000E6E89 /* MLTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLTextField.swift; sourceTree = "<group>"; };
+		E0EED546248F91EE000E6E89 /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,7 @@
 		E08F09512486E7BC00631C3F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E0EED544248F8FC6000E6E89 /* MLTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -95,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				E08F09402486E41200631C3F /* HomeVC.swift */,
+				E0EED546248F91EE000E6E89 /* HistoryVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -204,6 +210,8 @@
 				E08F093D2486E41200631C3F /* AppDelegate.swift in Sources */,
 				E0EED541248F623B000E6E89 /* ErrorMessage.swift in Sources */,
 				E08F093F2486E41200631C3F /* SceneDelegate.swift in Sources */,
+				E0EED545248F8FC6000E6E89 /* MLTextField.swift in Sources */,
+				E0EED547248F91EE000E6E89 /* HistoryVC.swift in Sources */,
 				E0EED543248F6286000E6E89 /* City.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

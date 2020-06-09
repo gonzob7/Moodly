@@ -11,43 +11,45 @@ import UIKit
 class HomeVC: UIViewController {
     
 //    var city: City!
+    let cityTextField = MLTextField()
+    
+    var isCityEntered: Bool{
+        return !cityTextField.text!.isEmpty
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.view.backgroundColor = .systemBackground
+        configureTextField()
         
-//        NetworkManager.shared.getCurrentWeather(for: "Seattle") { [weak self] result in
-//            guard let self = self else {return}
-//
-//            switch result{
-//            case .success(let city):
-//                DispatchQueue.main.async {
-//                    print(city)
-//                }
-//
-//            case .failure(let error):
-//                print(error)
-//            }
-//        }
         
-        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=Seattle&units=imperial&appid=5a53d613fe98be346f15a66e850c565e") else {return}
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-        guard let dataResponse = data,
-                  error == nil else {
-                  print(error?.localizedDescription ?? "Response Error")
-                  return }
-            do{
-                //here dataResponse received from a network request
-                let decoder = JSONDecoder()
-                let model = try decoder.decode(City.self, from: dataResponse)
-                print("\(model.name) : \(model.main.temp): \(model.weather[0].description)") //Response result
-             } catch let parsingError {
-                print("Error", parsingError)
-           }
+        NetworkManager.shared.getCurrentWeather(for: "Seattle") { [weak self] result in
+            guard let self = self else {return}
+
+            switch result{
+            case .success(let city):
+                DispatchQueue.main.async {
+                    print(city.weather[0].description)
+                }
+
+            case .failure(let error):
+                print(error)
+            }
         }
-        task.resume()
+    }
+    
+    
+    func configureTextField(){
+        view.addSubview(cityTextField)
+//        cityTextField.delegate = self
         
+        NSLayoutConstraint.activate([
+            cityTextField.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            cityTextField.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 50),
+            cityTextField.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -50),
+            cityTextField.heightAnchor.constraint(equalToConstant: 50)
+        ])
     }
 
 
