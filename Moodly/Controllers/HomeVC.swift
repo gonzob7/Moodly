@@ -13,7 +13,7 @@ class HomeVC: UIViewController {
 //    var city: City!
     var cityName: String!
     var cityNameFormatted: String!
-//    var currentCity: City!
+    var currentWeatherView = UIView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,13 +22,14 @@ class HomeVC: UIViewController {
 
         getWeather(for: cityNameFormatted)
 
+        layoutUI()
     }
     
     func configureViewController(){
         view.backgroundColor = .systemBackground
         title = cityName
         navigationController?.navigationBar.prefersLargeTitles = true
-        
+        navigationController?.navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: nil), animated: false)
 
     }
     
@@ -44,13 +45,14 @@ class HomeVC: UIViewController {
                     print(city.weather[0].description)
                     print(city.main.temp)
                     
-                    
-                    
+                    self.add(childVC: MLCurrentWeatherCardVC(city: city), to: self.currentWeatherView)
                 }
 
             case .failure(let error):
                 print(error)
             }
+            
+            
         }
     }
     
@@ -60,6 +62,20 @@ class HomeVC: UIViewController {
         childVC.view.frame = containerView.bounds
         childVC.didMove(toParent: self)
     }
+    
+    func layoutUI(){
+        view.addSubview(currentWeatherView)
+        currentWeatherView.translatesAutoresizingMaskIntoConstraints = false
+                
+        NSLayoutConstraint.activate([
+            currentWeatherView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            currentWeatherView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            currentWeatherView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            currentWeatherView.heightAnchor.constraint(equalToConstant: 180)
+        
+        ])
+    }
+
     
 
         
