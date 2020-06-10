@@ -42,7 +42,9 @@ class HomeVC: UIViewController {
                 DispatchQueue.main.async {
 //                    self.currentCity = city
                     print(city.weather[0].description)
-                    self.navigationController?.navigationItem.setRightBarButton(UIBarButtonItem(title: "\(city.main.temp)", style: .plain, target: nil, action: nil), animated: false)
+                    print(city.main.temp)
+                    
+                    
                     
                 }
 
@@ -50,6 +52,13 @@ class HomeVC: UIViewController {
                 print(error)
             }
         }
+    }
+    
+    func add(childVC: UIViewController, to containerView: UIView){
+        addChild(childVC)
+        containerView.addSubview(childVC.view)
+        childVC.view.frame = containerView.bounds
+        childVC.didMove(toParent: self)
     }
     
 

@@ -21,6 +21,7 @@
 		E0EED547248F91EE000E6E89 /* HistoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EED546248F91EE000E6E89 /* HistoryVC.swift */; };
 		E0EED549248F96FA000E6E89 /* MLButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EED548248F96FA000E6E89 /* MLButton.swift */; };
 		E0EED54B248F994F000E6E89 /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EED54A248F994F000E6E89 /* SearchVC.swift */; };
+		E0EED54D24906584000E6E89 /* MLCurrentWeatherCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0EED54C24906584000E6E89 /* MLCurrentWeatherCardVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		E0EED546248F91EE000E6E89 /* HistoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryVC.swift; sourceTree = "<group>"; };
 		E0EED548248F96FA000E6E89 /* MLButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLButton.swift; sourceTree = "<group>"; };
 		E0EED54A248F994F000E6E89 /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
+		E0EED54C24906584000E6E89 /* MLCurrentWeatherCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLCurrentWeatherCardVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				E0EED544248F8FC6000E6E89 /* MLTextField.swift */,
 				E0EED548248F96FA000E6E89 /* MLButton.swift */,
+				E0EED54C24906584000E6E89 /* MLCurrentWeatherCardVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				E0EED549248F96FA000E6E89 /* MLButton.swift in Sources */,
 				E0EED545248F8FC6000E6E89 /* MLTextField.swift in Sources */,
 				E0EED547248F91EE000E6E89 /* HistoryVC.swift in Sources */,
+				E0EED54D24906584000E6E89 /* MLCurrentWeatherCardVC.swift in Sources */,
 				E0EED543248F6286000E6E89 /* City.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
