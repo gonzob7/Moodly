@@ -83,6 +83,9 @@ class MLCurrentWeatherCardVC: UIViewController {
         }else if city.weather[0].description.contains("shower") || city.weather[0].description.contains("rain"){
         let rainImage = UIImage(systemName: "cloud.drizzle.fill")?.withTintColor(.systemTeal, renderingMode: .alwaysOriginal)
         weatherImage.image = rainImage
+        }else if city.weather[0].description.contains("clear"){
+        let clearImage = UIImage(systemName: "sun.max")?.withTintColor(.systemTeal, renderingMode: .alwaysOriginal)
+        weatherImage.image = clearImage
         }
     }
     
