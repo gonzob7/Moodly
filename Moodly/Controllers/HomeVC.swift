@@ -66,7 +66,7 @@ class HomeVC: UIViewController {
         currentWeatherView.translatesAutoresizingMaskIntoConstraints = false
                 
         NSLayoutConstraint.activate([
-            currentWeatherView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            currentWeatherView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 15),
             currentWeatherView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             currentWeatherView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             currentWeatherView.heightAnchor.constraint(equalToConstant: 320)
