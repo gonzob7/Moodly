@@ -32,7 +32,7 @@ class MLCurrentWeatherCardVC: UIViewController {
     
     let cityLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16, weight: .light)
+        label.font = UIFont.preferredFont(forTextStyle: .body)
         label.textColor = UIColor(red: 99/255, green: 100/255, blue: 99/255, alpha: 1)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -41,7 +41,7 @@ class MLCurrentWeatherCardVC: UIViewController {
     
     let weatherLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 16, weight: .light)
+        label.font = UIFont.preferredFont(forTextStyle: .body)
         label.textColor = UIColor(red: 99/255, green: 100/255, blue: 99/255, alpha: 1)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -66,7 +66,7 @@ class MLCurrentWeatherCardVC: UIViewController {
     
     func configure(){
         let tempInt = Int(city.main.temp)
-        tempLabel.text = "\(tempInt)°"
+        tempLabel.text = "\(tempInt)°F"
         cityLabel.text = "\(city.name.uppercased())"
         weatherLabel.text = "\(city.weather[0].description.uppercased())"
         
@@ -78,11 +78,11 @@ class MLCurrentWeatherCardVC: UIViewController {
             let sunImage = UIImage(systemName: "sun.max.fill")?.withTintColor(.systemYellow, renderingMode: .alwaysOriginal)
             weatherImage.image = sunImage
         }else if city.weather[0].description.contains("snow"){
-        let sunImage = UIImage(systemName: "snow")?.withTintColor(.systemTeal, renderingMode: .alwaysOriginal)
-        weatherImage.image = sunImage
+        let snowImage = UIImage(systemName: "snow")?.withTintColor(.systemTeal, renderingMode: .alwaysOriginal)
+        weatherImage.image = snowImage
         }else if city.weather[0].description.contains("shower") || city.weather[0].description.contains("rain"){
-        let sunImage = UIImage(systemName: "cloud.drizzle.fill")?.withTintColor(.systemTeal, renderingMode: .alwaysOriginal)
-        weatherImage.image = sunImage
+        let rainImage = UIImage(systemName: "cloud.drizzle.fill")?.withTintColor(.systemTeal, renderingMode: .alwaysOriginal)
+        weatherImage.image = rainImage
         }
     }
     
