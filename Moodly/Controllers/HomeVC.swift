@@ -26,11 +26,9 @@ class HomeVC: UIViewController {
     }
     
     func configureViewController(){
-        view.backgroundColor = .systemBackground
-        title = cityName
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationController?.navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: nil), animated: false)
-
+        view.backgroundColor = UIColor(red: 242/255, green: 242/255, blue: 255/255, alpha: 1)
+        title = "Weather"
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     
@@ -71,14 +69,11 @@ class HomeVC: UIViewController {
             currentWeatherView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             currentWeatherView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             currentWeatherView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            currentWeatherView.heightAnchor.constraint(equalToConstant: 180)
+            currentWeatherView.heightAnchor.constraint(equalToConstant: 320)
         
         ])
     }
-
     
-
-        
-    }
+}
     
 

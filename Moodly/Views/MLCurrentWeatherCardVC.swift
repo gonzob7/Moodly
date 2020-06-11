@@ -13,15 +13,41 @@ class MLCurrentWeatherCardVC: UIViewController {
     var city: City!
     
 
+    let weatherImage: UIImageView = {
+        let image = UIImageView()
+        
+        image.translatesAutoresizingMaskIntoConstraints = false
+        return image
+    }()
+    
     
     let tempLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 50, weight: .bold)
-        label.textColor = .systemTeal
+        label.font = UIFont.systemFont(ofSize: 60, weight: .medium)
+        label.textColor = UIColor(red: 99/255, green: 100/255, blue: 99/255, alpha: 1)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    let cityLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 16, weight: .light)
+        label.textColor = UIColor(red: 99/255, green: 100/255, blue: 99/255, alpha: 1)
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    let weatherLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 16, weight: .light)
+        label.textColor = UIColor(red: 99/255, green: 100/255, blue: 99/255, alpha: 1)
+        label.textAlignment = .center
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     
     init(city: City){
         super.init(nibName: nil, bundle: nil)
@@ -41,17 +67,39 @@ class MLCurrentWeatherCardVC: UIViewController {
     func configure(){
         let tempInt = Int(city.main.temp)
         tempLabel.text = "\(tempInt)°"
-        
+        cityLabel.text = "\(city.name.uppercased())"
+        weatherLabel.text = "\(city.weather[0].description.uppercased())"
     }
     
     func layoutUI(){
+        
+        view.addSubview(weatherImage)
         view.addSubview(tempLabel)
+        view.addSubview(cityLabel)
+        view.addSubview(weatherLabel)
         
         NSLayoutConstraint.activate([
-            tempLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 100),
+            
+            weatherImage.topAnchor.constraint(equalTo: view.topAnchor),
+            weatherImage.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            weatherImage.heightAnchor.constraint(equalToConstant: 200),
+            weatherImage.widthAnchor.constraint(equalToConstant: 200),
+            
+            
+            tempLabel.topAnchor.constraint(equalTo: weatherImage.bottomAnchor, constant: 5),
             tempLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -50),
-            tempLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 50),
-            tempLabel.heightAnchor.constraint(equalToConstant: 50)
+            tempLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 58),
+            tempLabel.heightAnchor.constraint(equalToConstant: 80),
+            
+            cityLabel.topAnchor.constraint(equalTo: tempLabel.bottomAnchor),
+            cityLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -50),
+            cityLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 50),
+            cityLabel.heightAnchor.constraint(equalToConstant: 20),
+            
+            weatherLabel.topAnchor.constraint(equalTo: cityLabel.bottomAnchor, constant: 5),
+            weatherLabel.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -50),
+            weatherLabel.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 50),
+            weatherLabel.heightAnchor.constraint(equalToConstant: 20)
         ])
         
     }

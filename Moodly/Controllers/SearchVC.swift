@@ -74,15 +74,8 @@ class SearchVC: UIViewController {
         guard isCityEntered else{
             print("No city entered!")
             return }
-        
-        let cityNameFormatted = cityTextField.text!.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
-        
-        
+                
         let newTabBar = createTabBar()
-        
-        
-        
-        
         
         guard let window = UIApplication.shared.windows.first else {
             return
